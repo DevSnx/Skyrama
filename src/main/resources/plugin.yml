@@ -1,6 +1,6 @@
 name: Skyrama
 version: ${project.version}
-main: fr.kozen.skyrama.Skyrama
+main: de.skyrama.Skyrama
 api-version: 1.19
 authors: [ Kozen, DevSnx ]
 description: Skyblock plugin for Minecraft 1.19
