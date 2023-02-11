@@ -10,7 +10,7 @@ This plugin was originally made for `Spigot 1.19` but you can totally edit it to
 
 ## Installation
 
-1. Compile the project or download [this JAR file](https://github.com/kozennnn/simple-skyblock/releases/download/v0.3-ALPHA/skyrama-0.3-alpha.jar).
+1. Compile the project or download [this JAR file](https://github.com/DevSnx/Skyrama/releases/download/v0.3-ALPHA/skyrama-0.3-ALPHA.jar).
 2. Place the plugin into your server plugin's directory.
 3. Restart your server or reload it with the command `/reload`.
 4. You can now configure the plugin in the `config.yml` file.
