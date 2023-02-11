@@ -29,11 +29,16 @@ public final class Skyrama extends JavaPlugin {
     @Override
     public void onEnable() {
 
+        getServer().getConsoleSender().sendMessage("#################################");
+        getServer().getConsoleSender().sendMessage("");
+        getServer().getConsoleSender().sendMessage("   §aSkyrama §c" + getDescription().getVersion() + "-ALPHA");
+        getServer().getConsoleSender().sendMessage("     by DevSnx & kozennnn");
         this.initConfig();
         this.initObjects();
         this.initEvents();
         this.initCommands();
-
+        getServer().getConsoleSender().sendMessage("");
+        getServer().getConsoleSender().sendMessage("#################################");
     }
 
     @Override
@@ -127,6 +132,6 @@ public final class Skyrama extends JavaPlugin {
     public static InventoryManager getInventoryManager() {
 
         return inventoryManager;
-        
+
     }
 }
