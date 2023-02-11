@@ -1,6 +1,6 @@
 
-# Simple SkyBlock
-A simple SkyBlock plugin for Spigot servers without any useless features, just the necessary.
+# Skyrama
+Skyrama is a SkyBlock plugin for Spigot servers without any useless features, just the necessary.
 
 ![screenshot](https://zupimages.net/up/21/27/c38w.png)
 
