@@ -44,8 +44,5 @@ public class GridManager {
             return 1;
         }
         return 0;
-
-
     }
-
 }

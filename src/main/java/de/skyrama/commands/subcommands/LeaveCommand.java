@@ -28,7 +28,7 @@ public class LeaveCommand implements ISubCommand {
     @Override
     public void perform(Player player, String[] args) {
 
-        if(player.hasPermission((Skyrama.getPermissionsManager().getString("island-perm-leave"))) || player.hasPermission(Skyrama.getPermissionsManager().getString("island-perm-admin"))){
+        if(player.hasPermission("skyrama.*") || player.hasPermission("skyrama.create") || player.isOp()){
             Island island = Skyrama.getIslandManager().getPlayerIsland(player);
 
             if(island != null) {

@@ -6,7 +6,6 @@ import de.skyrama.objects.grids.GridManager;
 import de.skyrama.objects.inventorys.InventoryManager;
 import de.skyrama.objects.islands.IslandManager;
 import de.skyrama.objects.locales.LocaleManager;
-import de.skyrama.objects.permissions.PermissionsManager;
 import de.skyrama.objects.schematics.SchematicManager;
 import de.skyrama.storage.SqlManager;
 import de.skyrama.events.*;
@@ -14,6 +13,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Skyrama extends JavaPlugin {
 
+    public static Skyrama instance;
     private static GridManager gridManager;
     private static SqlManager sqlManager;
     private static IslandManager islandManager;
@@ -22,28 +22,31 @@ public final class Skyrama extends JavaPlugin {
 
     private static InventoryManager inventoryManager;
 
-    private static PermissionsManager permissionsManager;
-
 
 
     @Override
     public void onEnable() {
+        // Plugin start logic
+        instance = this;
 
-        getServer().getConsoleSender().sendMessage("#################################");
+        getServer().getConsoleSender().sendMessage("==========================================");
         getServer().getConsoleSender().sendMessage("");
-        getServer().getConsoleSender().sendMessage("   §aSkyrama §c" + getDescription().getVersion() + "-ALPHA");
-        getServer().getConsoleSender().sendMessage("     by DevSnx & kozennnn");
+        getServer().getConsoleSender().sendMessage("     §aSkyrama §c" + getDescription().getVersion() + "-ALPHA");
+        getServer().getConsoleSender().sendMessage("     by §aDevSnx §f& §bkozennnn");
+        getServer().getConsoleSender().sendMessage("");
+        getServer().getConsoleSender().sendMessage("           §cLoading...");
         this.initConfig();
         this.initObjects();
         this.initEvents();
         this.initCommands();
         getServer().getConsoleSender().sendMessage("");
-        getServer().getConsoleSender().sendMessage("#################################");
+        getServer().getConsoleSender().sendMessage("==========================================");
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+        instance = null;
     }
 
     public void initConfig() {
@@ -56,8 +59,6 @@ public final class Skyrama extends JavaPlugin {
         saveResource("locales/de_DE.yml", false);
         // Load default schematics
         saveResource("schematics/island.schematic", false);
-        // Load default Permissions
-        saveResource("permissions.yml", false);
     }
 
     public void initCommands() {
@@ -73,7 +74,6 @@ public final class Skyrama extends JavaPlugin {
         islandManager = new IslandManager();
         schematicManager = new SchematicManager();
         localeManager = new LocaleManager();
-        permissionsManager = new PermissionsManager();
         inventoryManager = new InventoryManager();
 
         islandManager.loadIslands();
@@ -123,15 +123,15 @@ public final class Skyrama extends JavaPlugin {
 
     }
 
-    public static PermissionsManager getPermissionsManager() {
-
-        return permissionsManager;
-
-    }
-
     public static InventoryManager getInventoryManager() {
 
         return inventoryManager;
+
+    }
+
+    public static Skyrama getInstance() {
+
+        return instance;
 
     }
 }

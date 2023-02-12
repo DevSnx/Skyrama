@@ -14,11 +14,6 @@ public class InventoryManager {
         for(int i = 0; i < 5*9; i++) {
             inv.setItem(i, new ItemStack(Material.BLACK_STAINED_GLASS_PANE));
         }
-
-
-
-
-
     }
 
     public Inventory getInv() {

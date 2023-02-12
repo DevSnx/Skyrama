@@ -25,7 +25,7 @@ public class HomeCommand implements ISubCommand {
     @Override
     public void perform(Player player, String[] args) {
 
-        if(player.hasPermission((Skyrama.getPermissionsManager().getString("island-perm-home"))) || player.hasPermission(Skyrama.getPermissionsManager().getString("island-perm-admin"))){
+        if(player.hasPermission("skyrama.*") || player.hasPermission("skyrama.create") || player.isOp()){
             if(Skyrama.getIslandManager().getPlayerIsland(player) != null) {
                 player.sendMessage(Skyrama.getLocaleManager().getString("player-teleport-island"));
                 Skyrama.getIslandManager().getPlayerIsland(player).getSpawn().setWorld(Bukkit.getWorld((String) Skyrama.getPlugin(Skyrama.class).getConfig().get("general.world")));

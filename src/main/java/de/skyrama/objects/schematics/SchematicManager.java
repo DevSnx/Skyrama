@@ -37,7 +37,7 @@ public class SchematicManager {
     public void load(String name, double x, double y, double z) {
 
         try {
-            File file = new File(Skyrama.getPlugin(Skyrama.class).getDataFolder() + "/schematics/" + name + ".schematic");
+            File file = new File(Skyrama.getPlugin(Skyrama.class).getDataFolder() + "/schematics/" + name + ".schem");
             Bukkit.getLogger().info(file.getPath());
             ClipboardFormat format = ClipboardFormats.findByFile(file);
             ClipboardReader reader = format.getReader(new FileInputStream(file));
@@ -49,6 +49,7 @@ public class SchematicManager {
                         .ignoreAirBlocks(false)
                         .build();
                 Operations.complete(operation);
+                editSession.flushSession();
                 Bukkit.getLogger().info("complete");
             } catch (WorldEditException e) {
                 e.printStackTrace();

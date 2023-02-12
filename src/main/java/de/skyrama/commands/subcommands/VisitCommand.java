@@ -28,7 +28,7 @@ public class VisitCommand implements ISubCommand {
     public void perform(Player player, String[] args) {
 
 
-        if(player.hasPermission((Skyrama.getPermissionsManager().getString("island-perm-visit"))) || player.hasPermission(Skyrama.getPermissionsManager().getString("island-perm-admin"))){
+        if(player.hasPermission("skyrama.*") || player.hasPermission("skyrama.create") || player.isOp()){
             Player target = null;
 
             if(Bukkit.getPlayer(args[1]) != null) {
