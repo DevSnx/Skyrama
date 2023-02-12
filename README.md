@@ -27,6 +27,8 @@ This plugin was originally made for `Spigot 1.19` but you can totally edit it to
 | `/is invite <Player Name>` | Invite the player to play on your island. |
 | `/is accept <Player Name>` | Accept the player invitation. |
 | `/is deny <Player Name>` | Decline the player invitation. |
+| `/is info` | Show infos about you Island. |
+| `/is gui` | Open a Gui to manage you Island. |
 
 ## Permissions
 
@@ -40,6 +42,6 @@ This plugin was originally made for `Spigot 1.19` but you can totally edit it to
 | `skyrama.home` | Teleport user to his island spawn. |
 | `skyrama.visit` | Teleport to the specified player island. |
 | `skyrama.setspawn` | Change the island spawn to user position. |
-| `skyrama.admin.break` | Break Blocks on a other Island without Trust |
-| `skyrama.admin.place` | Place Blocks on a other Island without Trust |
+| `skyrama.break` | Break Blocks on a other Island without Trust |
+| `skyrama.place` | Place Blocks on a other Island without Trust |
 
