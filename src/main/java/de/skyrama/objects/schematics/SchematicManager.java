@@ -62,7 +62,6 @@ public class SchematicManager {
                     editSession.flushSession();
 
                 } catch (WorldEditException e) {
-                    Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "OOPS! Something went wrong, please contact an administrator");
                     e.printStackTrace();
                 }
             }
