@@ -1,6 +1,10 @@
 # PLAYER NO PERMISSIONS
 player-noperm: §c No Permissions!
 
+# PLAYER JOIN AND QUIT
+player-join-message: §a%PLAYERNAME% has joined
+player-quit-message: §c%PLAYERNAME% has left
+
 # PLAYER NOT ONLINE OR HAS ISLAND
 player-offline: §c{0} is not online.
 player-offline-island: §c{0} is not online or don't have an island.

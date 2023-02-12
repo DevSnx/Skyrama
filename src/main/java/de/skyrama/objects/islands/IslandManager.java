@@ -14,6 +14,8 @@ public class IslandManager {
 
     public Set<Island> islands;
 
+    public int islandID;
+
     public IslandManager() { this.initialise(); };
 
     public void initialise() {
@@ -30,17 +32,20 @@ public class IslandManager {
     }
 
     public void create(OfflinePlayer owner) {
+        int newID = (Skyrama.getIslandManager().islands.size()+1);
+        islandID = newID;
 
-        int islandId = IslandDao.addIsland();
+        IslandDao.addIsland();
 
-        Location location = Skyrama.getGridManager().getCenterFromId(islandId);
+        Location location = Skyrama.getGridManager().getCenterFromId(newID);
+
         Location spawn = new Location(Bukkit.getWorld(Skyrama.getPlugin(Skyrama.class).getConfig().getString("general.world")), location.getBlockX(), 100, location.getBlockZ() + 2);
 
         Bukkit.getLogger().info("x: " + spawn.getX());
         Bukkit.getLogger().info("y: " + spawn.getY());
         Bukkit.getLogger().info("z: " + spawn.getZ());
 
-        Island island = new Island(islandId, Biome.BADLANDS, 0, spawn);
+        Island island = new Island(newID, Biome.BADLANDS, 0, spawn);
         this.islands.add(island);
         island.addPlayer(owner, Rank.OWNER);
 

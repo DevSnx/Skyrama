@@ -13,13 +13,17 @@ public class OnBlockBreak implements Listener {
 
         Player player = event.getPlayer();
 
-        if(Skyrama.getGridManager().isInPlayerIsland(event.getPlayer(), event.getBlock().getLocation()) == 1) {
-            if(player.hasPermission("skyrama.*") || player.hasPermission("skyrama.create") || player.isOp()){
-
+        if(Skyrama.getGridManager().isInPlayerIsland(event.getPlayer(), event.getBlock().getLocation()) == 2) {
+            event.setCancelled(false);
+            player.sendMessage("DEINE INSEL!");
+        }else{
+            if(player.hasPermission("skyrama.*") || player.hasPermission("skyrama.break") || player.isOp()){
                 event.setCancelled(false);
+                player.sendMessage("NICHT DEINE INSEL, ABER RECHTE!");
             }else{
                 event.getPlayer().sendMessage(Skyrama.getLocaleManager().getString("player-break"));
                 event.setCancelled(true);
+                player.sendMessage("keine Rechte!");
             }
         }
     }

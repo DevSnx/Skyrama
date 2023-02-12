@@ -17,7 +17,9 @@ public class SqlManager {
     private Connection connection;
     private MysqlDataSource dataSource = new MysqlConnectionPoolDataSource();
 
-    public SqlManager() { this.initialise(); };
+    public SqlManager() {
+        this.initialise();
+    };
 
     public void initialise() {
 

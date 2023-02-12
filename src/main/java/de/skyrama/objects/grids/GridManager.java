@@ -4,6 +4,7 @@ import de.skyrama.objects.islands.Island;
 import de.skyrama.Skyrama;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
 public class GridManager {
@@ -17,7 +18,7 @@ public class GridManager {
         int x = (id*1000);
         int z = (int) (Math.floor(x / 384500)*1000);
 
-        return new Location(Bukkit.getWorld("world"), x, 100, z);
+        return new Location(Bukkit.getWorld(Skyrama.getPlugin(Skyrama.class).getConfig().getString("general.world")), x, 100, z);
 
     }
 

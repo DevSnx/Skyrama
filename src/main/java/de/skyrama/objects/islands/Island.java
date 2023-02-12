@@ -26,7 +26,6 @@ public class Island {
         this.players = IslandDao.getPlayers(id);
         this.spawn = spawn;
         this.invites = new HashMap<>();
-        //Bukkit.getLogger().info(this.getOwner().getName());
 
     }
 
@@ -100,8 +99,12 @@ public class Island {
     }
 
     public void save() {
+
         IslandDao.save(this);
+
     }
 
-
+    public void setId(int id) {
+        this.id = id;
+    }
 }

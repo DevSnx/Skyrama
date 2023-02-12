@@ -9,7 +9,12 @@ import de.skyrama.objects.locales.LocaleManager;
 import de.skyrama.objects.schematics.SchematicManager;
 import de.skyrama.storage.SqlManager;
 import de.skyrama.events.*;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public final class Skyrama extends JavaPlugin {
 
@@ -69,6 +74,9 @@ public final class Skyrama extends JavaPlugin {
 
         gridManager = new GridManager();
         sqlManager = new SqlManager();
+
+        initDatabase();
+
         islandManager = new IslandManager();
         schematicManager = new SchematicManager();
         localeManager = new LocaleManager();
@@ -76,6 +84,24 @@ public final class Skyrama extends JavaPlugin {
 
         islandManager.loadIslands();
 
+    }
+
+    public void initDatabase() {
+        try (Connection conn = Skyrama.getSqlManager().getConnection(); PreparedStatement stmt = conn.prepareStatement(
+                "CREATE TABLE IF NOT EXISTS `islands` " +
+                        "(id INT, " +
+                        "biome VARCHAR(100), " +
+                        "extension_level INT, " +
+                        "spawn_x FLOAT, " +
+                        "spawn_y FLOAT, " +
+                        "spawn_z FLOAT, " +
+                        "spawn_yaw FLOAT, " +
+                        "spawn_pitch FLOAT)"
+        )) {
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            Bukkit.getLogger().info("Something went wrong. " + e);
+        }
     }
 
     public void initEvents() {
