@@ -19,7 +19,7 @@ general:
   locale: en_US
 
   # Name of the world where floating islands spawn
-  world: world
+  world: skyrama
 
 # Island related settings
 island:
