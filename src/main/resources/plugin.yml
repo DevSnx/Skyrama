@@ -4,6 +4,8 @@ main: de.skyrama.Skyrama
 api-version: 1.19
 authors: [ Kozen, DevSnx ]
 description: Skyblock plugin for Minecraft 1.19
+depend:
+  - WorldEdit
 commands:
   island:
     description: Island command

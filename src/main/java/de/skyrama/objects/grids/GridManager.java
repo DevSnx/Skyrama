@@ -14,8 +14,8 @@ public class GridManager {
 
     public Location getCenterFromId(int id) {
 
-        int x = (id*769);
-        int z = (int) (Math.floor(x / 384500)*769);
+        int x = (id*1000);
+        int z = (int) (Math.floor(x / 384500)*1000);
 
         return new Location(Bukkit.getWorld("world"), x, 100, z);
 
