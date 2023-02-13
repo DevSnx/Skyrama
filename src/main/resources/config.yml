@@ -22,10 +22,13 @@ general:
   world: skyrama
 
   # Enable the Join and Quit Messages
-  join-quit-messages: enable
+  join-quit-messages: true
 
 # Island related settings
 island:
+
+  # Island chat with @is
+  island-chat: true
 
   # Name of the default island schematic in folder ./schematics/******.schem
   schematic: island
