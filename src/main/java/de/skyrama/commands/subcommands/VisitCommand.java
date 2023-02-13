@@ -28,7 +28,7 @@ public class VisitCommand implements ISubCommand {
     public void perform(Player player, String[] args) {
 
 
-        if(player.hasPermission("skyrama.*") || player.hasPermission("skyrama.create")){
+        if(player.hasPermission("skyrama.*") || player.hasPermission("skyrama.visit")){
             Player target = null;
 
             if(Bukkit.getPlayer(args[1]) != null) {

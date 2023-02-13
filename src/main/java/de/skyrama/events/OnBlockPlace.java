@@ -10,19 +10,15 @@ import org.bukkit.event.block.BlockPlaceEvent;
 public class OnBlockPlace implements Listener {
 
     @EventHandler
-    public void onBlockPlace(BlockPlaceEvent event) {
+    public void onBlockPlaces(BlockPlaceEvent event) {
 
         Player player = event.getPlayer();
         if(event.getBlock().getLocation().getWorld() == Bukkit.getWorld((String) Skyrama.getPlugin(Skyrama.class).getConfig().get("general.world"))){
             if(Skyrama.getGridManager().isInPlayerIsland(event.getPlayer(), event.getBlock().getLocation()) == 2) {
                 event.setCancelled(false);
             }else{
-                if(player.hasPermission("skyrama.*") || player.hasPermission("skyrama.place") || player.isOp()){
-                    event.setCancelled(false);
-                }else{
-                    event.getPlayer().sendMessage(Skyrama.getLocaleManager().getString("player-place"));
-                    event.setCancelled(true);
-                }
+                event.getPlayer().sendMessage(Skyrama.getLocaleManager().getString("player-place"));
+                event.setCancelled(true);
             }
         }
     }

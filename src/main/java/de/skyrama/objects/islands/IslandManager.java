@@ -27,7 +27,6 @@ public class IslandManager {
     public void loadIslands() {
 
         this.islands = IslandDao.getIslands();
-        //this.islands.forEach(island -> Bukkit.getLogger().info(String.valueOf(island.getId())));
 
     }
 
@@ -45,7 +44,7 @@ public class IslandManager {
         //Bukkit.getLogger().info("y: " + spawn.getY());
         //Bukkit.getLogger().info("z: " + spawn.getZ());
 
-        Island island = new Island(newID, Biome.BADLANDS, 0, spawn);
+        Island island = new Island(newID, Biome.PLAINS, 0, spawn);
         this.islands.add(island);
         island.addPlayer(owner, Rank.OWNER);
 
@@ -77,5 +76,4 @@ public class IslandManager {
         return this.islands;
 
     }
-
 }

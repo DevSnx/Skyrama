@@ -18,12 +18,8 @@ public class OnBlockBreak implements Listener {
             if(Skyrama.getGridManager().isInPlayerIsland(event.getPlayer(), event.getBlock().getLocation()) == 2) {
                 event.setCancelled(false);
             }else{
-                if(player.hasPermission("skyrama.*") || player.hasPermission("skyrama.break") || player.isOp()){
-                    event.setCancelled(false);
-                }else{
-                    event.getPlayer().sendMessage(Skyrama.getLocaleManager().getString("player-break"));
-                    event.setCancelled(true);
-                }
+                event.getPlayer().sendMessage(Skyrama.getLocaleManager().getString("player-break"));
+                event.setCancelled(true);
             }
         }
     }

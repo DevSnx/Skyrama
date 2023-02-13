@@ -15,8 +15,6 @@ public class IslandDao {
 
     public static Set<Island> getIslands() {
 
-        Bukkit.getServer().getConsoleSender().sendMessage("#     §cLoading Islands..     §f#");
-
         Set<Island> islands = new HashSet<>();
 
         try (Connection conn = Skyrama.getSqlManager().getConnection(); PreparedStatement stmt = conn.prepareStatement(
@@ -40,9 +38,6 @@ public class IslandDao {
         } catch (SQLException e) {
             Bukkit.getLogger().info("Something went wrong. " + e);
         }
-
-
-        Bukkit.getServer().getConsoleSender().sendMessage("#     §b" + islands.size() +  " §fIslands Loaded!     §f#");
         return islands;
     }
 
@@ -56,7 +51,7 @@ public class IslandDao {
             stmt.setInt(1, islandId);
             ResultSet resultSet = stmt.executeQuery();
             while (resultSet.next()) {
-                Bukkit.getLogger().info(Bukkit.getOfflinePlayer(UUID.fromString(resultSet.getString("uuid"))).getName());
+                //Bukkit.getLogger().info(Bukkit.getOfflinePlayer(UUID.fromString(resultSet.getString("uuid"))).getName());
                 players.put(Bukkit.getOfflinePlayer(UUID.fromString(resultSet.getString("uuid"))), Rank.fromInt(resultSet.getInt("rank")));
             }
 

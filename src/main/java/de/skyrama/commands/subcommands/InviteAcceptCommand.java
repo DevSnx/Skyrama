@@ -27,7 +27,7 @@ public class InviteAcceptCommand implements ISubCommand {
     @Override
     public void perform(Player player, String[] args) {
 
-        if(player.hasPermission("skyrama.*") || player.hasPermission("skyrama.create")){
+        if(player.hasPermission("skyrama.*") || player.hasPermission("skyrama.accept")){
             if(Bukkit.getPlayer(args[1]) != null) {
                 Player target = Bukkit.getPlayer(args[1]);
 

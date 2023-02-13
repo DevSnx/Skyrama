@@ -1,5 +1,5 @@
 name: Skyrama
-version: 0.4
+version: 0.0.5
 main: de.skyrama.Skyrama
 api-version: 1.19
 authors: [ Kozen, DevSnx ]

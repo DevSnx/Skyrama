@@ -4,18 +4,21 @@ import de.skyrama.commands.CommandManager;
 import de.skyrama.events.*;
 import de.skyrama.objects.grids.GridManager;
 import de.skyrama.objects.inventorys.InventoryManager;
+import de.skyrama.objects.islands.Island;
 import de.skyrama.objects.islands.IslandManager;
 import de.skyrama.objects.locales.LocaleManager;
 import de.skyrama.objects.schematics.SchematicManager;
 import de.skyrama.storage.SqlManager;
-import de.skyrama.events.*;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.HashMap;
 
 public final class Skyrama extends JavaPlugin {
 
@@ -34,13 +37,15 @@ public final class Skyrama extends JavaPlugin {
 
         getServer().getConsoleSender().sendMessage("#############################");
         getServer().getConsoleSender().sendMessage("#                           #");
-        getServer().getConsoleSender().sendMessage("#     §aSkyrama §c" + getDescription().getVersion() + "-ALPHA     §f#");
+        getServer().getConsoleSender().sendMessage("#   §aSkyrama §c" + getDescription().getVersion() + "-ALPHA     §f#");
         getServer().getConsoleSender().sendMessage("#   by §bDevSnx §f& §bkozennnn    §f#");
         getServer().getConsoleSender().sendMessage("#                           #");
+        getServer().getConsoleSender().sendMessage("#         §cLoading...        §f#");
         this.initFiles();
         this.initObjects();
         this.initEvents();
         this.initCommands();
+        getServer().getConsoleSender().sendMessage("#     §aSucsess Loading!      §f#");
         getServer().getConsoleSender().sendMessage("#                           #");
         getServer().getConsoleSender().sendMessage("#############################");
     }
@@ -121,16 +126,18 @@ public final class Skyrama extends JavaPlugin {
 
     public void initEvents() {
 
-        getServer().getPluginManager().registerEvents(new OnBlockBreak(), this);
-        getServer().getPluginManager().registerEvents(new OnBlockPlace(), this);
-        getServer().getPluginManager().registerEvents(new OnEntityTarget(), this);
-        getServer().getPluginManager().registerEvents(new OnPlayerDamage(), this);
-        getServer().getPluginManager().registerEvents(new OnEntityDamageByEntity(), this);
-        getServer().getPluginManager().registerEvents(new OnBlockClick(), this);
-        getServer().getPluginManager().registerEvents(new OnPlayerJoin(), this);
-        getServer().getPluginManager().registerEvents(new OnPlayerRespawn(), this);
-        getServer().getPluginManager().registerEvents(new OnInventoryClick(), this);
-        getServer().getPluginManager().registerEvents(new OnInventoryOpen(), this);
+        PluginManager load = getServer().getPluginManager();
+
+        load.registerEvents(new OnBlockBreak(), this);
+        load.registerEvents(new OnEntityTarget(), this);
+        load.registerEvents(new OnEntityDamage(), this);
+        load.registerEvents(new OnEntityDamageByEntity(), this);
+        load.registerEvents(new OnPlayerRespawn(), this);
+        load.registerEvents(new OnInventoryClick(), this);
+        load.registerEvents(new OnPlayerJoin(), this);
+        load.registerEvents(new OnInventoryOpen(), this);
+        load.registerEvents(new OnBlockPlace(), this);
+        load.registerEvents(new OnPlayerInteract(), this);
 
     }
 
