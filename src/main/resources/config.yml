@@ -24,7 +24,7 @@ general:
 # Island related settings
 island:
 
-  # Name of the default island schematic in folder ./schematics/******.schematic
+  # Name of the default island schematic in folder ./schematics/******.schem
   schematic: island
 
   # Distance between each islands in blocks
