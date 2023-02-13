@@ -1,6 +1,7 @@
 package de.skyrama.events;
 
 import de.skyrama.Skyrama;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -16,8 +17,10 @@ public class OnEntityTarget implements Listener {
             Player player = ((Player) event.getTarget()).getPlayer();
 
             assert player != null;
-            if(Skyrama.getGridManager().isInPlayerIsland(player, player.getLocation()) == 1) {
-                event.setCancelled(true);
+            if(player.getLocation().getWorld() == Bukkit.getWorld((String) Skyrama.getPlugin(Skyrama.class).getConfig().get("general.world"))){
+                if(Skyrama.getGridManager().isInPlayerIsland(player, player.getLocation()) == 1) {
+                    event.setCancelled(true);
+                }
             }
         }
     }

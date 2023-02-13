@@ -47,6 +47,7 @@ public class Island {
 
     }
 
+
     public OfflinePlayer getOwner() {
 
         return this.getPlayers().entrySet().stream().filter(entry -> entry.getValue().equals(Rank.OWNER)).findAny().get().getKey();

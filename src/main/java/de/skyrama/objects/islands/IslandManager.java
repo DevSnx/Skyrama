@@ -27,7 +27,7 @@ public class IslandManager {
     public void loadIslands() {
 
         this.islands = IslandDao.getIslands();
-        this.islands.forEach(island -> Bukkit.getLogger().info(String.valueOf(island.getId())));
+        //this.islands.forEach(island -> Bukkit.getLogger().info(String.valueOf(island.getId())));
 
     }
 
@@ -41,9 +41,9 @@ public class IslandManager {
 
         Location spawn = new Location(Bukkit.getWorld(Skyrama.getPlugin(Skyrama.class).getConfig().getString("general.world")), location.getBlockX(), 100, location.getBlockZ() + 2);
 
-        Bukkit.getLogger().info("x: " + spawn.getX());
-        Bukkit.getLogger().info("y: " + spawn.getY());
-        Bukkit.getLogger().info("z: " + spawn.getZ());
+        //Bukkit.getLogger().info("x: " + spawn.getX());
+        //Bukkit.getLogger().info("y: " + spawn.getY());
+        //Bukkit.getLogger().info("z: " + spawn.getZ());
 
         Island island = new Island(newID, Biome.BADLANDS, 0, spawn);
         this.islands.add(island);

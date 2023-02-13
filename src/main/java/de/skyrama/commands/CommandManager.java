@@ -25,6 +25,7 @@ public class CommandManager implements CommandExecutor {
         subcommands.add(new InviteDenyCommand());
         subcommands.add(new LeaveCommand());
         subcommands.add(new InfoCommand());
+        subcommands.add(new GuiCommand());
 
     }
 

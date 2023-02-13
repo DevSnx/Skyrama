@@ -15,7 +15,7 @@ public class IslandDao {
 
     public static Set<Island> getIslands() {
 
-        Bukkit.getLogger().info("Gettings islands...");
+        Bukkit.getServer().getConsoleSender().sendMessage("#     §cLoading Islands..     §f#");
 
         Set<Island> islands = new HashSet<>();
 
@@ -34,7 +34,6 @@ public class IslandDao {
                                 resultSet.getFloat("spawn_z"),
                                 resultSet.getFloat("spawn_yaw"),
                                 resultSet.getFloat("spawn_pitch")));
-
                 islands.add(island);
             }
 
@@ -42,6 +41,8 @@ public class IslandDao {
             Bukkit.getLogger().info("Something went wrong. " + e);
         }
 
+
+        Bukkit.getServer().getConsoleSender().sendMessage("#     §b" + islands.size() +  " §fIslands Loaded!     §f#");
         return islands;
     }
 
