@@ -4,21 +4,17 @@ import de.skyrama.commands.CommandManager;
 import de.skyrama.events.*;
 import de.skyrama.objects.grids.GridManager;
 import de.skyrama.objects.inventorys.InventoryManager;
-import de.skyrama.objects.islands.Island;
 import de.skyrama.objects.islands.IslandManager;
 import de.skyrama.objects.locales.LocaleManager;
 import de.skyrama.objects.schematics.SchematicManager;
 import de.skyrama.storage.SqlManager;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.HashMap;
 
 public final class Skyrama extends JavaPlugin {
 
@@ -128,16 +124,20 @@ public final class Skyrama extends JavaPlugin {
 
         PluginManager load = getServer().getPluginManager();
 
-        load.registerEvents(new OnBlockBreak(), this);
         load.registerEvents(new OnEntityTarget(), this);
         load.registerEvents(new OnEntityDamage(), this);
         load.registerEvents(new OnEntityDamageByEntity(), this);
-        load.registerEvents(new OnPlayerRespawn(), this);
+
         load.registerEvents(new OnInventoryClick(), this);
-        load.registerEvents(new OnPlayerJoin(), this);
         load.registerEvents(new OnInventoryOpen(), this);
+
         load.registerEvents(new OnBlockPlace(), this);
+        load.registerEvents(new OnBlockBreak(), this);
+
         load.registerEvents(new OnPlayerInteract(), this);
+        load.registerEvents(new OnPlayerRespawn(), this);
+        load.registerEvents(new OnPlayerJoin(), this);
+        load.registerEvents(new OnPlayerQuit(), this);
 
     }
 

@@ -44,22 +44,9 @@ public class InviteCommand implements ISubCommand {
                         }
 
                         if (island.getInvites() != null && island.getInvites().get(target) == null) {
-                            player.sendMessage(ChatColor.GREEN + "Sending an invitation to " + target.getName() + "...");
-                            target.sendMessage(ChatColor.GREEN + " ");
-                            target.sendMessage(ChatColor.GRAY + player.getName() + " invited you to play on his island? If you accept your island will be deleted.");
-                            target.sendMessage(ChatColor.GREEN + " ");
 
-                            TextComponent messageYes = new TextComponent(ChatColor.GREEN + "[ACCEPT]");
-                            messageYes.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/island accept " + player.getName()));
-
-                            TextComponent messageNo = new TextComponent(ChatColor.RED + "[DECLINE] ");
-                            messageNo.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/island deny " + player.getName()));
-
-                            messageYes.addExtra(" ");
-                            messageYes.addExtra(messageNo);
-
-                            target.spigot().sendMessage(messageYes);
-                            target.sendMessage(ChatColor.GREEN + " ");
+                            player.sendMessage(Skyrama.getLocaleManager().getString("player-invite-island").replace("{0}", target.getName()));
+                            target.sendMessage(Skyrama.getLocaleManager().getString("target-invite-island").replace("{1}", player.getName()));
 
                             island.getInvites().put(target, player);
                         } else {

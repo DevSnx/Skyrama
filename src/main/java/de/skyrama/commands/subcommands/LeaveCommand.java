@@ -34,21 +34,28 @@ public class LeaveCommand implements ISubCommand {
             if(island != null) {
                 if(island.getRank(player).equals(Rank.OWNER)) {
                     island.removePlayer(player);
-                    player.sendMessage(ChatColor.GREEN + "You left your island and it was deleted.");
+
+                    //player.sendMessage(ChatColor.GREEN + "You left your island and it was deleted.");
+                    player.sendMessage(Skyrama.getLocaleManager().getString("player-leave-and-delete-island"));
+
                     for(OfflinePlayer offlinePlayer : island.getPlayers().keySet()) {
                         if(offlinePlayer.isOnline()) {
                             Player member = offlinePlayer.getPlayer();
-                            member.sendMessage(ChatColor.RED + "" + player.getName() + " deleted the island.");
+                            //member.sendMessage(ChatColor.RED + "" + player.getName() + " deleted the island.");
+                            member.sendMessage(Skyrama.getLocaleManager().getString("target-leave-and-delete-island").replace("{0}", player.getName()));
                             island.removePlayer(member);
                         }
                     }
                 } else {
                     island.removePlayer(player);
-                    player.sendMessage(ChatColor.GREEN + "You left the island with success.");
+                    //player.sendMessage(ChatColor.GREEN + "You left the island with success.");
+                    player.sendMessage(Skyrama.getLocaleManager().getString("player-leave-island"));
+
                     for(OfflinePlayer offlinePlayer : island.getPlayers().keySet()) {
                         if(offlinePlayer.isOnline()) {
                             Player member = offlinePlayer.getPlayer();
-                            member.sendMessage(ChatColor.RED + "" + player.getName() + " left your island.");
+                            //member.sendMessage(ChatColor.RED + "" + player.getName() + " left your island.");
+                            member.sendMessage(Skyrama.getLocaleManager().getString("target-leave-island").replace("{1}", player.getName()));
                         }
                     }
                 }

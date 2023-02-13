@@ -5,9 +5,10 @@ player-noperm: §c No Permissions!
 player-join-message: §a%PLAYERNAME% has joined
 player-quit-message: §c%PLAYERNAME% has left
 
-# PLAYER NOT ONLINE OR HAS ISLAND
+# PLAYER NOT ONLINE OR HAS ISLAND OR NO OWNER
 player-offline: §c{0} is not online.
 player-offline-island: §c{0} is not online or don't have an island.
+player-no-owner: §cYou are not the owner of this island!
 
 # ISLAND INVITE
 player-already-invited: §c{0} already invited {1}.
@@ -15,10 +16,15 @@ player-already-on-island: §c{0} is already on your island.
 
 # ISLAND CREATE
 player-already-have-island: §cYou already have an island!
+player-create-island: §cIsland was created!
 
 # ISLAND HOME
 player-no-island: §cYou don't have an island!
 player-teleport-island: §aTeleporting to island...
+
+# ISLAND INVITE
+player-invite-island: §aSending an invitation to §b{0}
+target-invite-island: §c{1} invited you to play on his Island.
 
 # ISLAND INVITE ACCEPT
 player-join-island: §a{0} joined your island!
@@ -36,8 +42,11 @@ setspawn-success: §aNew spawn set with success!
 # ISLAND VISIT
 player-visit-island: §aTeleporting to {0} island...
 
-player-no-owner: §cYou are not the owner of this island!
-player-leave-island: §aYou leave the island with success!
+# ISLAND LEAVE
+player-leave-island: §aYou leave the island!
+target-leave-island: §c{1} has left the island!
+player-leave-and-delete-island: §aYou left your island and it was deleted.
+target-leave-and-delete-island: §c{0} has deleted the island, now no Island.
 
 # OTHER ISLAND BREAK BLOCKS
 player-break: §cYou can't break block in others player island

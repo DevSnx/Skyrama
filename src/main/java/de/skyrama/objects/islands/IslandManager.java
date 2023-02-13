@@ -40,22 +40,17 @@ public class IslandManager {
 
         Location spawn = new Location(Bukkit.getWorld(Skyrama.getPlugin(Skyrama.class).getConfig().getString("general.world")), location.getBlockX(), 100, location.getBlockZ() + 2);
 
-        //Bukkit.getLogger().info("x: " + spawn.getX());
-        //Bukkit.getLogger().info("y: " + spawn.getY());
-        //Bukkit.getLogger().info("z: " + spawn.getZ());
-
         Island island = new Island(newID, Biome.PLAINS, 0, spawn);
         this.islands.add(island);
         island.addPlayer(owner, Rank.OWNER);
 
-        owner.getPlayer().sendMessage(ChatColor.GREEN + "Creating island...");
-
         island.setSpawn(spawn);
         island.save();
 
-
         Skyrama.getSchematicManager().load(Skyrama.getPlugin(Skyrama.class).getConfig().getString("island.schematic"), location.getX(), location.getY(), location.getZ());
         owner.getPlayer().teleport(spawn);
+
+        owner.getPlayer().sendMessage(Skyrama.getLocaleManager().getString("player-create-island"));
 
     }
 

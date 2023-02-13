@@ -21,6 +21,9 @@ general:
   # Name of the world where floating islands spawn
   world: skyrama
 
+  # Enable the Join and Quit Messages
+  join-quit-messages: enable
+
 # Island related settings
 island:
 
