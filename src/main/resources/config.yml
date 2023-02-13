@@ -9,7 +9,7 @@ mysql:
   port: 3306
   name: skyrama
   user: root
-  password:
+  password: skyrama
 
 # General plugin settings
 general:
