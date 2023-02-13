@@ -25,7 +25,7 @@ public class SetSpawnCommand implements ISubCommand {
     @Override
     public void perform(Player player, String[] args) {
 
-        if(player.hasPermission("skyrama.*") || player.hasPermission("skyrama.create") || player.isOp()){
+        if(player.hasPermission("skyrama.*") || player.hasPermission("skyrama.create")){
             if(Skyrama.getGridManager().isInPlayerIsland(player, player.getLocation()) != 2) {
                 player.sendMessage(Skyrama.getLocaleManager().getString("setspawn-out-island"));
             } else {

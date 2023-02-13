@@ -24,7 +24,7 @@ public class CreateCommand implements ISubCommand {
     @Override
     public void perform(Player player, String[] args) {
 
-        if(player.hasPermission("skyrama.*") || player.hasPermission("skyrama.create") || player.isOp()){
+        if(player.hasPermission("skyrama.*") || player.hasPermission("skyrama.create")){
             if(Skyrama.getIslandManager().getPlayerIsland(player) == null) {
                 Skyrama.getIslandManager().create(player);
             } else {

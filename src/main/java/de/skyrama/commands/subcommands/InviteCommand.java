@@ -30,7 +30,7 @@ public class InviteCommand implements ISubCommand {
     @Override
     public void perform(Player player, String[] args) {
 
-        if(player.hasPermission("skyrama.*") || player.hasPermission("skyrama.create") || player.isOp()){
+        if(player.hasPermission("skyrama.*") || player.hasPermission("skyrama.create")){
             Island island = Skyrama.getIslandManager().getPlayerIsland(player);
 
             if(island != null) {

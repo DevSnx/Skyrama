@@ -26,7 +26,7 @@ public class InfoCommand implements ISubCommand {
 
     @Override
     public void perform(Player player, String[] args) {
-        if(player.hasPermission("skyrama.*") || player.hasPermission("skyrama.info") || player.isOp()){
+        if(player.hasPermission("skyrama.*") || player.hasPermission("skyrama.info")){
             if(Skyrama.getIslandManager().getPlayerIsland(player) == null) {
                 player.sendMessage("§cKeine Insel!");
             }else{
