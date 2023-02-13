@@ -53,11 +53,11 @@ public final class Skyrama extends JavaPlugin {
     }
 
     public void initFiles() {
-
         // Load default config when not exists
         getConfig().options().copyDefaults(true);
         saveDefaultConfig();
 
+        // Load Languages  when not exists
         File file = new File(Skyrama.getInstance().getDataFolder()+"/locales",  "en_US.yml");
         File file2 = new File(Skyrama.getInstance().getDataFolder()+"/locales",  "de_DE.yml");
 

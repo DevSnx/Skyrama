@@ -13,7 +13,7 @@ public class SqlManager {
     private String host = (String) Skyrama.getPlugin(Skyrama.class).getConfig().get("mysql.host");
     private String name = (String) Skyrama.getPlugin(Skyrama.class).getConfig().get("mysql.name");
     private String password = (String) Skyrama.getPlugin(Skyrama.class).getConfig().get("mysql.password");
-    private int port = (int) Skyrama.getPlugin(Skyrama.class).getConfig().get("mysql.port");
+    private int port = (int) Skyrama.getPlugin(Skyrama.class).getConfig().getInt("mysql.port");
     private Connection connection;
     private MysqlDataSource dataSource = new MysqlConnectionPoolDataSource();
 

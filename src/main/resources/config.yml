@@ -8,7 +8,7 @@ mysql:
   host: localhost
   port: 3306
   name: skyrama
-  user: root
+  user: skyrama
   password: skyrama
 
 # General plugin settings
@@ -24,11 +24,17 @@ general:
   # Enable the Join and Quit Messages
   join-quit-messages: true
 
+# Island chat settings
+chat:
+
+  # Enable or disable the chat function (true, false)
+  island-chat: true
+
+  # message for Islandchat
+  island-chat-message: §cIsland §f| §c{0} §7- §f{message}
+
 # Island related settings
 island:
-
-  # Island chat with @is
-  island-chat: true
 
   # Name of the default island schematic in folder ./schematics/******.schem
   schematic: island
