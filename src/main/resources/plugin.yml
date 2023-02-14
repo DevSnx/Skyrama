@@ -6,6 +6,8 @@ authors: [ Kozen, DevSnx ]
 description: Skyblock plugin for Minecraft 1.19
 depend:
   - WorldEdit
+softdepend:
+  - Vault
 commands:
   island:
     description: Island command

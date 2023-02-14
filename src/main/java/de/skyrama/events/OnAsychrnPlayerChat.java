@@ -13,17 +13,26 @@ public class OnAsychrnPlayerChat implements Listener {
     @EventHandler
     public void onAsynchronPlayerChat(AsyncPlayerChatEvent event){
         Player player = event.getPlayer();
-        if(event.getMessage().startsWith("@is")){
+        String message = event.getMessage();
+
+        if(message.startsWith("@is")){
+
+            message.replace("@is", "§f");
             if(Skyrama.getPlugin(Skyrama.class).getConfig().getBoolean("chat.island-chat") == true){
                 event.setCancelled(true);
-                Island is = Skyrama.getIslandManager().getPlayerIsland(event.getPlayer());
-                String message = Skyrama.getPlugin(Skyrama.class).getConfig().getString("chat.island-chat-message").
-                        replace("{message}", event.getMessage().replace("{0}", event.getPlayer().getName()));;
-
-                for(Player all : Bukkit.getOnlinePlayers()){
-                    if(is.getPlayers().containsKey(all.getPlayer())){
-                        all.sendMessage(message);
+                if(Skyrama.getIslandManager().getPlayerIsland(event.getPlayer()) != null){
+                    Island is = Skyrama.getIslandManager().getPlayerIsland(event.getPlayer());
+                    String messages = Skyrama.getPlugin(Skyrama.class).getConfig().getString("chat.island-chat-message");
+                    messages = messages.replace("{msg}", event.getMessage());
+                    messages = messages.replace("{0}", event.getPlayer().getName());
+                    messages = messages.replace("&", "§");
+                    for(Player all : Bukkit.getOnlinePlayers()){
+                        if(is.getPlayers().containsKey(all.getPlayer()) || is.getOwner().getPlayer().equals(all)){
+                            all.sendMessage(messages);
+                        }
                     }
+                }else{
+                    player.sendMessage(Skyrama.getPlugin(Skyrama.class).getConfig().getString("player-no-island"));
                 }
             }
         }

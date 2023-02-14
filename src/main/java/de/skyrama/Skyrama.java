@@ -93,26 +93,28 @@ public final class Skyrama extends JavaPlugin {
 
     public void initDatabase() {
         try (Connection conn = Skyrama.getSqlManager().getConnection(); PreparedStatement stmt = conn.prepareStatement(
-                "CREATE TABLE IF NOT EXISTS `islands` " +
-                        "(id INT, " +
-                        "biome VARCHAR(100), " +
-                        "extension_level INT, " +
-                        "spawn_x FLOAT, " +
-                        "spawn_y FLOAT, " +
-                        "spawn_z FLOAT, " +
-                        "spawn_yaw FLOAT, " +
-                        "spawn_pitch FLOAT, UNIQUE KEY (id))"
+                "CREATE TABLE IF NOT EXISTS `islands` (" +
+                        "  `id` int(11) NOT NULL," +
+                        "  `biome` varchar(255) NOT NULL," +
+                        "  `extension_level` int(11) NOT NULL," +
+                        "  `spawn_x` float NOT NULL DEFAULT '0'," +
+                        "  `spawn_y` float NOT NULL DEFAULT '0'," +
+                        "  `spawn_z` float NOT NULL DEFAULT '0'," +
+                        "  `spawn_yaw` float NOT NULL DEFAULT '0'," +
+                        "  `spawn_pitch` float NOT NULL DEFAULT '0'" +
+                        ")"
         )) {
             stmt.executeUpdate();
         } catch (SQLException e) {
             Bukkit.getLogger().info("Something went wrong. " + e);
         }
         try (Connection conn = Skyrama.getSqlManager().getConnection(); PreparedStatement stmt = conn.prepareStatement(
-                "CREATE TABLE IF NOT EXISTS `islands_users` " +
-                        "(uuid VARCHAR(100), " +
-                        "island_id VARCHAR(100)," +
-                        "rank INT," +
-                        " UNIQUE KEY (uuid))"
+                "CREATE TABLE IF NOT EXISTS `islands_users` (" +
+                        "  `id` int(11) NOT NULL," +
+                        "  `uuid` varchar(255) NOT NULL," +
+                        "  `island_id` int(11) NOT NULL," +
+                        "  `rank` int(11) NOT NULL" +
+                        ")"
         )) {
             stmt.executeUpdate();
         } catch (SQLException e) {
@@ -138,6 +140,8 @@ public final class Skyrama extends JavaPlugin {
         load.registerEvents(new OnPlayerRespawn(), this);
         load.registerEvents(new OnPlayerJoin(), this);
         load.registerEvents(new OnPlayerQuit(), this);
+
+        load.registerEvents(new OnAsychrnPlayerChat(), this);
 
     }
 
