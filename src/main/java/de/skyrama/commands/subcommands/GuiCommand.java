@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 public class GuiCommand implements ISubCommand {
     @Override
     public String getName() {
-        return "GUI";
+        return "gui";
     }
 
     @Override

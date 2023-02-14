@@ -31,7 +31,7 @@ chat:
   global-chat: false
 
   # message for Globalchat
-  global-chat-message:
+  global-chat-message: §c{0} §7- §f{msg}
 
   # Enable or disable the Island chat function (true, false)
   island-chat: true
