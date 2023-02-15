@@ -1,11 +1,5 @@
-
-# Skyrama
-
-![screenshot](https://zupimages.net/up/21/27/c38w.png)
-
-## Version
-
-This plugin was originally made for `Spigot 1.19` but you can totally edit it to use it with others Minecraft versions.
+##
+![screenshot](http://diecrewline.de/spigot/Skyrama/v1.0.0-ALPHA.png)
 
 ## Installation
 
@@ -31,7 +25,8 @@ This plugin was originally made for `Spigot 1.19` but you can totally edit it to
 | `/is info` | Show infos about you Island. |
 | `/is gui` | Open a Gui to manage you Island. |
 
-## Permissions
+##
+![screenshot](http://diecrewline.de/spigot/Skyrama/Permissions.png)
 
 | Permissions       | Description  |
 | ------------- |-------------|
@@ -46,3 +41,4 @@ This plugin was originally made for `Spigot 1.19` but you can totally edit it to
 | `skyrama.break` | Break Blocks on a other Island without Trust |
 | `skyrama.place` | Place Blocks on a other Island without Trust |
 
+![screenshot](https://zupimages.net/up/21/27/c38w.png)
