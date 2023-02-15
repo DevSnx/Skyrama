@@ -22,7 +22,7 @@ general:
   world: skyrama
 
   # PREFIX for all messages §f{PREFIX}
-  prefix: §7[§aSkyrama§7]
+  prefix: §7[§bSkyrama§7]
 
 # Island chat settings
 chat:

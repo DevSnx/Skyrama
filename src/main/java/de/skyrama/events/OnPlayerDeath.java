@@ -27,6 +27,5 @@ public class OnPlayerDeath implements Listener {
                 player.spigot().respawn();
             }
         }.runTask(Skyrama.getInstance());
-
     }
 }

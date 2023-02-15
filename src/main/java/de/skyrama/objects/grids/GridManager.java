@@ -15,8 +15,8 @@ public class GridManager {
 
     public Location getCenterFromId(int id) {
 
-        int x = (id*1000);
-        int z = (int) (Math.floor(x / 384500)*1000);
+        int x = (id*600);
+        int z = (int) (Math.floor(x / 384500)*600);
 
         return new Location(Bukkit.getWorld(Skyrama.getPlugin(Skyrama.class).getConfig().getString("general.world")), x, 100, z);
 

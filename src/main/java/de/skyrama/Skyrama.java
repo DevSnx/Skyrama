@@ -36,7 +36,7 @@ public final class Skyrama extends JavaPlugin {
 
         getServer().getConsoleSender().sendMessage("#############################");
         getServer().getConsoleSender().sendMessage("#                           #");
-        getServer().getConsoleSender().sendMessage("#   §aSkyrama §c" + getDescription().getVersion() + "-ALPHA     §f#");
+        getServer().getConsoleSender().sendMessage("#   §aSkyrama §7v§c" + getDescription().getVersion() + "-ALPHA    §f#");
         getServer().getConsoleSender().sendMessage("#   by §bDevSnx §f& §bkozennnn    §f#");
         getServer().getConsoleSender().sendMessage("#                           #");
         getServer().getConsoleSender().sendMessage("#         §cLoading...        §f#");
@@ -71,8 +71,6 @@ public final class Skyrama extends JavaPlugin {
         if(!file2.exists()){
             saveResource("locales/de_DE.yml", false);
         }
-
-        saveResource("schematics/island.schem", false);
     }
 
     public void initCommands() {
