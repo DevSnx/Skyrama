@@ -14,7 +14,9 @@ This plugin was originally made for `Spigot 1.19` but you can totally edit it to
 3. Restart your server or reload it with the command `/reload`.
 4. You can now configure the plugin in the `config.yml` file.
 
-## ![screenshot](http://diecrewline.de/spigot/Skyrama/Commands.png)
+
+##
+![screenshot](http://diecrewline.de/spigot/Skyrama/Commands.png)
 
 | Command       | Description  |
 | ------------- |-------------|
