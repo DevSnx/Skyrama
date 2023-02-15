@@ -8,7 +8,7 @@
 3. Download Island Schematic [this .schem file](http://diecrewline.de/spigot/Skyrama/Schematic/island.schem).
 4. Place the plugins into your server plugin's directory.
 5. Restart your server or reload it with the command `/reload`.
-6. Place the .schem file into you server plugin´s `/plugins/Skyrama/schematics` directory.
+6. Place the `Island.schem` file into you server plugin´s `/plugins/Skyrama/schematics` directory.
 7. Restart your server or reload it again with the command `/reload`.
 8. You can now configure the plugin in the `config.yml` file and messages in `en_US` or `de_DE`.
 
