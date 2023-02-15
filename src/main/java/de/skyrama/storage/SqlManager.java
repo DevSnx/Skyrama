@@ -3,6 +3,7 @@ package de.skyrama.storage;
 import com.mysql.cj.jdbc.MysqlConnectionPoolDataSource;
 import com.mysql.cj.jdbc.MysqlDataSource;
 import de.skyrama.Skyrama;
+import de.skyrama.objects.islands.IslandDao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -33,6 +34,10 @@ public class SqlManager {
 
     public Connection getConnection() throws SQLException {
         return dataSource.getConnection();
+    }
+
+    public void create() {
+        IslandDao.createTables();
     }
 
 }

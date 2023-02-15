@@ -13,6 +13,39 @@ import java.util.*;
 
 public class IslandDao {
 
+    public static void createTables() {
+        try (Connection conn = Skyrama.getSqlManager().getConnection(); PreparedStatement stmt = conn.prepareStatement(
+                "CREATE TABLE IF NOT EXISTS `islands` (" +
+                        "  `id` int(11) NOT NULL AUTO_INCREMENT," +
+                        "  `biome` varchar(255) NOT NULL," +
+                        "  `extension_level` int(11) NOT NULL," +
+                        "  `spawn_x` float NOT NULL DEFAULT '0'," +
+                        "  `spawn_y` float NOT NULL DEFAULT '0'," +
+                        "  `spawn_z` float NOT NULL DEFAULT '0'," +
+                        "  `spawn_yaw` float NOT NULL DEFAULT '0'," +
+                        "  `spawn_pitch` float NOT NULL DEFAULT '0'," +
+                        "PRIMARY KEY (id)" +
+                        ")"
+        )) {
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            Bukkit.getLogger().info("Something went wrong. " + e);
+        }
+
+        try (Connection conn = Skyrama.getSqlManager().getConnection(); PreparedStatement stmt = conn.prepareStatement(
+                "CREATE TABLE IF NOT EXISTS `islands_users` (" +
+                        "  `id` int(11) NOT NULL AUTO_INCREMENT," +
+                        "  `uuid` varchar(255) NOT NULL," +
+                        "  `island_id` int(11) NOT NULL," +
+                        "  `rank` int(11) NOT NULL," +
+                        "PRIMARY KEY (id)" +
+                        ")"
+        )) {
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            Bukkit.getLogger().info("Something went wrong. " + e);
+        }
+    }
     public static Set<Island> getIslands() {
 
         Set<Island> islands = new HashSet<>();

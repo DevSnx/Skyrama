@@ -34,26 +34,26 @@ chat:
   global-chat-message: §c{0} §7- §f{msg}
 
   # Enable or disable the Island chat function (true, false)
-  island-chat: true
+  island-chat: false
 
   # message for Islandchat
   island-chat-message: §cIsland §f| §c{0} §7- §f{msg}
 
 # Island related settings
-vault:
-
-  # Enable or Disable the player need Money to create her Island
-  enable: false
-
-  # Price to create Island
-  island-costs: 500
-
-  # Enable or Disable the player need Money to Invite players to his Island
-  island-invite-enable: false
-
-  # Price to Invite a Players
-  island-invite-price: 100
-
+#vault: (In Progress)
+#
+#  # Enable or Disable the player need Money to create her Island
+#  enable: false
+#
+#  # Price to create Island
+#  island-costs: 500
+#
+#  # Enable or Disable the player need Money to Invite players to his Island
+#  island-invite-enable: false
+#
+#  # Price to Invite a Players
+#  island-invite-price: 100
+#
 # Island related settings
 island:
 

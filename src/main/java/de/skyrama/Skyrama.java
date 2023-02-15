@@ -69,6 +69,8 @@ public final class Skyrama extends JavaPlugin {
         if(!file2.exists()){
             saveResource("locales/de_DE.yml", false);
         }
+
+        saveResource("schematics/island.schem", false);
     }
 
     public void initCommands() {
@@ -82,7 +84,7 @@ public final class Skyrama extends JavaPlugin {
         gridManager = new GridManager();
         sqlManager = new SqlManager();
 
-        initDatabase();
+        sqlManager.create();
 
         islandManager = new IslandManager();
         schematicManager = new SchematicManager();
@@ -91,37 +93,6 @@ public final class Skyrama extends JavaPlugin {
 
         islandManager.loadIslands();
 
-    }
-
-    public void initDatabase() {
-        try (Connection conn = Skyrama.getSqlManager().getConnection(); PreparedStatement stmt = conn.prepareStatement(
-                "CREATE TABLE IF NOT EXISTS `islands` (" +
-                        "  `id` int(11) NOT NULL," +
-                        "  `biome` varchar(255) NOT NULL," +
-                        "  `extension_level` int(11) NOT NULL," +
-                        "  `spawn_x` float NOT NULL DEFAULT '0'," +
-                        "  `spawn_y` float NOT NULL DEFAULT '0'," +
-                        "  `spawn_z` float NOT NULL DEFAULT '0'," +
-                        "  `spawn_yaw` float NOT NULL DEFAULT '0'," +
-                        "  `spawn_pitch` float NOT NULL DEFAULT '0'" +
-                        ")"
-        )) {
-            stmt.executeUpdate();
-        } catch (SQLException e) {
-            Bukkit.getLogger().info("Something went wrong. " + e);
-        }
-        try (Connection conn = Skyrama.getSqlManager().getConnection(); PreparedStatement stmt = conn.prepareStatement(
-                "CREATE TABLE IF NOT EXISTS `islands_users` (" +
-                        "  `id` int(11) NOT NULL," +
-                        "  `uuid` varchar(255) NOT NULL," +
-                        "  `island_id` int(11) NOT NULL," +
-                        "  `rank` int(11) NOT NULL" +
-                        ")"
-        )) {
-            stmt.executeUpdate();
-        } catch (SQLException e) {
-            Bukkit.getLogger().info("Something went wrong. " + e);
-        }
     }
 
     public void initEvents() {
@@ -138,12 +109,12 @@ public final class Skyrama extends JavaPlugin {
         load.registerEvents(new OnBlockPlace(), this);
         load.registerEvents(new OnBlockBreak(), this);
 
+        load.registerEvents(new OnAsychrnPlayerChat(), this);
+
         load.registerEvents(new OnPlayerInteract(), this);
         load.registerEvents(new OnPlayerRespawn(), this);
         load.registerEvents(new OnPlayerJoin(), this);
         load.registerEvents(new OnPlayerQuit(), this);
-
-        load.registerEvents(new OnAsychrnPlayerChat(), this);
 
     }
 

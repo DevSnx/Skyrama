@@ -23,6 +23,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.Objects;
 
 public class SchematicManager {
@@ -37,38 +38,25 @@ public class SchematicManager {
 
     }
 
-    public void load(String name, double X, double Y, double Z){
+    public void load(String name, double X, double Y, double Z) {
 
-        com.sk89q.worldedit.world.World adaptedWorld = BukkitAdapter.adapt(Objects.requireNonNull(Bukkit.getWorld((String) Skyrama.getPlugin(Skyrama.class).getConfig().get("general.world"))));
-
-        File file = new File(Skyrama.getPlugin(Skyrama.class).getDataFolder() + "/schematics/" + name + ".schem");
-        Bukkit.getLogger().info(file.getPath());
-
-        ClipboardFormat format = ClipboardFormats.findByFile(file);
-
-        try (ClipboardReader reader = format.getReader(new FileInputStream(file))) {
-
+        try {
+            File file = new File(Skyrama.getPlugin(Skyrama.class).getDataFolder() + "/schematics/" + name + ".schem");
+            ClipboardFormat format = ClipboardFormats.findByFile(file);
+            ClipboardReader reader = format.getReader(Files.newInputStream(file.toPath()));
             Clipboard clipboard = reader.read();
-
-            try (EditSession editSession = WorldEdit.getInstance().getEditSessionFactory().getEditSession(adaptedWorld, -1)) {
-
-                Operation operation = new ClipboardHolder(clipboard).createPaste(editSession)
-                        .to(BlockVector3.at(X, Y, Z)).
-                        ignoreAirBlocks(false).
-                        build();
-
-                try {
-                    Operations.complete(operation);
-                    editSession.flushSession();
-
-                } catch (WorldEditException e) {
-                    e.printStackTrace();
-                }
+            try (EditSession editSession = WorldEdit.getInstance().getEditSessionFactory().getEditSession(BukkitAdapter.adapt(Objects.requireNonNull(Bukkit.getWorld((String) Skyrama.getPlugin(Skyrama.class).getConfig().get("general.world")))), -1)) {
+                Operation operation = new ClipboardHolder(clipboard)
+                        .createPaste(editSession)
+                        .to(BlockVector3.at(X, Y, Z))
+                        .ignoreAirBlocks(false)
+                        .build();
+                Operations.complete(operation);
+                Bukkit.getLogger().info("complete");
+            } catch (WorldEditException e) {
+                e.printStackTrace();
             }
 
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

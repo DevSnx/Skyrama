@@ -56,13 +56,14 @@ public class IslandManager {
 
     public Island getIslandOwnedBy(OfflinePlayer player) {
 
-        return this.getIslands().stream().filter(island -> island.getOwner().equals(player)).findAny().orElse(null);
+        return this.getIslands().stream().filter(island -> island.getOwner().getUniqueId().equals(player.getUniqueId())).findAny().orElse(null);
 
     }
 
     public Island getPlayerIsland(OfflinePlayer player) {
 
-        return this.getIslands().stream().filter(island -> island.getPlayers().containsKey(player)).findAny().orElse(null);
+        return this.getIslands().stream().filter(island -> island.getPlayers().keySet().stream().filter(offlinePlayer -> offlinePlayer.getUniqueId().equals(player.getUniqueId())).findAny().orElse(null) != null).findAny().orElse(null);
+
 
     }
 

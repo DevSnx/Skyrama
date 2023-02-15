@@ -35,6 +35,12 @@ public class Island {
 
     }
 
+    public OfflinePlayer getOwner() {
+
+        return this.getPlayers().entrySet().stream().filter(entry -> entry.getValue().equals(Rank.OWNER)).findAny().get().getKey();
+
+    }
+
     public Biome getBiome() {
 
         return this.biome;
@@ -48,9 +54,9 @@ public class Island {
     }
 
 
-    public OfflinePlayer getOwner() {
+    public OfflinePlayer getPlayer(OfflinePlayer player) {
 
-        return this.getPlayers().entrySet().stream().filter(entry -> entry.getValue().equals(Rank.OWNER)).findAny().get().getKey();
+        return this.getPlayers().keySet().stream().filter(offlinePlayer -> offlinePlayer.getUniqueId().equals(player.getUniqueId())).findAny().orElse(null);
 
     }
 
@@ -103,9 +109,5 @@ public class Island {
 
         IslandDao.save(this);
 
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }
