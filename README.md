@@ -1,4 +1,5 @@
 ##
+![screenshot](http://diecrewline.de/spigot/Skyrama/Skyrama.png)
 ![screenshot](http://diecrewline.de/spigot/Skyrama/v1.0.0-ALPHA.png)
 
 ## Installation
@@ -41,4 +42,6 @@
 | `skyrama.break` | Break Blocks on a other Island without Trust |
 | `skyrama.place` | Place Blocks on a other Island without Trust |
 
+##
+![screenshot](http://diecrewline.de/spigot/Skyrama/Screenshots.png)
 ![screenshot](https://zupimages.net/up/21/27/c38w.png)
