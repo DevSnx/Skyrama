@@ -14,6 +14,9 @@ mysql:
 # General plugin settings
 general:
 
+  #Prefix for all Messages
+  prefix: &8[&aSkyrama&8]
+
   # Language of the plugin (location: './locales/en_US.yml')
   # Avaible: en_US , de_DE
   locale: en_US
@@ -21,11 +24,11 @@ general:
   # Name of the world where floating islands spawn
   world: skyrama
 
-  # Enable the Join and Quit Messages
-  join-quit-messages: true
-
 # Island chat settings
 chat:
+
+  # Enable the Join and Quit Messages
+  join-quit-messages: true
 
   # Enable or disable the chat function (true, false)
   global-chat: false

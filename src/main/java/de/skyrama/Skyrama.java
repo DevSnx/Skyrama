@@ -27,6 +27,7 @@ public final class Skyrama extends JavaPlugin {
     private static SchematicManager schematicManager;
     private static LocaleManager localeManager;
     private static InventoryManager inventoryManager;
+    public static String prefix;
 
     @Override
     public void onEnable() {
@@ -46,6 +47,7 @@ public final class Skyrama extends JavaPlugin {
         getServer().getConsoleSender().sendMessage("#     §aSucsess Loading!      §f#");
         getServer().getConsoleSender().sendMessage("#                           #");
         getServer().getConsoleSender().sendMessage("#############################");
+
     }
 
     @Override
@@ -158,5 +160,9 @@ public final class Skyrama extends JavaPlugin {
 
         return instance;
 
+    }
+
+    public static String getPrefix() {
+        return prefix;
     }
 }

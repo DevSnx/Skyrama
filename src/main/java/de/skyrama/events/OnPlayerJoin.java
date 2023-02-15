@@ -11,8 +11,10 @@ public class OnPlayerJoin implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
 
-        if(Skyrama.getPlugin(Skyrama.class).getConfig().getBoolean("join-quit-messages")){
-            event.setJoinMessage(Skyrama.getLocaleManager().getString("player-join-message").replace("{0}", event.getPlayer().getName()));
+        if(Skyrama.getPlugin(Skyrama.class).getConfig().getBoolean("chat.join-quit-messages") == true){
+            event.setJoinMessage(Skyrama.getLocaleManager().getString("player-join-message").
+                    replace("{0}", event.getPlayer().getName())
+                    .replace("{prefix}", Skyrama.getInstance().getConfig().getString("global.prefix")));
         }
 
         if(Skyrama.getPlugin(Skyrama.class).getConfig().getBoolean("island.spawnIslandLogin")) {

@@ -1,53 +1,53 @@
 # PLAYER NO PERMISSIONS
-player-noperm: §cKeine Berechtigung!
+player-noperm: {prefix} §cKeine Berechtigung!
 
 # PLAYER JOIN AND QUIT
-player-join-message: §a{0} ist dem Server beigetreten
-player-quit-message: §§a{0} hat den Server verlassen
+player-join-message: {prefix} §a{0} ist dem Server beigetreten
+player-quit-message: {prefix} §a{0} hat den Server verlassen
 
 # PLAYER NOT ONLINE OR HAS ISLAND OR NO OWNER
-player-offline: §c{0} ist nicht Online.
-player-offline-island: §c{0} ist nicht online oder hat keine Insel.#
-player-no-owner: §cDu bist nicht Inhaber der Insel!
+player-offline: {prefix} §c{0} ist nicht Online.
+player-offline-island: {prefix} §c{0} ist nicht online oder hat keine Insel.#
+player-no-owner: {prefix} §cDu bist nicht Inhaber der Insel!
 
 # ISLAND INVITE
-player-already-invited: §c{0} wurde bereits eingeladen {1}.
-player-already-on-island: §c{0} ist schon in deiner Insel.
+player-already-invited: {prefix} §c{0} wurde bereits eingeladen {1}.
+player-already-on-island: {prefix} §c{0} ist schon in deiner Insel.
 
 # ISLAND CREATE
-player-already-have-island: §cDu besitzt bereits eine Insel!
-player-create-island: §cInsel wurde erstellt!
+player-already-have-island: {prefix} §cDu besitzt bereits eine Insel!
+player-create-island: {prefix} §cInsel wurde erstellt!
 
 # ISLAND HOME
-player-no-island: §cDu hast keine Insel!
-player-teleport-island: §aTeleportation zur Insel...
+player-no-island: {prefix} §cDu hast keine Insel!
+player-teleport-island: {prefix} §aTeleportation zur Insel...
 
 # ISLAND INVITE
-player-invite-island: §aInseleinladung an §b{0} §aversendet.
-target-invite-island: §c{1} hat dich zu seiner Insel eingeladen!
+player-invite-island: {prefix} §aInseleinladung an §b{0} §aversendet.
+target-invite-island: {prefix} §c{1} hat dich zu seiner Insel eingeladen!
 
 # ISLAND INVITE ACCEPT
-player-join-island: §a{0} ist deiner Insel beigetreten!
-player-join-island-success: §aDu bist der Insel von §b{0} §abeigetreten!
-player-no-invited: §c{0} hat dich nicht eingeladen!.
+player-join-island: {prefix} §a{0} ist deiner Insel beigetreten!
+player-join-island-success: {prefix} §aDu bist der Insel von §b{0} §abeigetreten!
+player-no-invited: {prefix} §c{0} hat dich nicht eingeladen!.
 
 # ISLAND INVITE DENY
-player-decline-invitation: §cDu hast die Anfrage von §b{0} §cabgelehnt.
-player-decline-your-invitation: §c{0} hat deine Anfrage abgelehnt.
+player-decline-invitation: {prefix} §cDu hast die Anfrage von §b{0} §cabgelehnt.
+player-decline-your-invitation: {prefix} §c{0} hat deine Anfrage abgelehnt.
 
 # ISLAND SETSPAWN
-setspawn-out-island: §cDu kannst den Inselspawn nicht ausserhalb der Insel setzen!.
-setspawn-success: §aNeuer Inselspawnpunkt gesetzt!
+setspawn-out-island: {prefix} §cDu kannst den Inselspawn nicht ausserhalb der Insel setzen!.
+setspawn-success: {prefix} §aNeuer Inselspawnpunkt gesetzt!
 
 # ISLAND VISIT
-player-visit-island: §aTeleportierung zur {0} Insel...
+player-visit-island: {prefix} §aTeleportierung zur {0} Insel...
 
 # ISLAND LEAVE
-player-leave-island: §aYou leave the island!
-target-leave-island: §c{1} has left the island!
-player-leave-and-delete-island: §aYou left your island and it was deleted.
-target-leave-and-delete-island: §c{0} has deleted the island, now no Island.
+player-leave-island: {prefix} §aYou leave the island!
+target-leave-island: {prefix} §c{1} has left the island!
+player-leave-and-delete-island: {prefix} §aYou left your island and it was deleted.
+target-leave-and-delete-island: {prefix} §c{0} has deleted the island, now no Island.
 
 # OTHER ISLAND BREAK BLOCKS
-player-break: §cDu kannst keine Blöcke auf einer anderen Insel abbauen!
-player-place: §cDu kannst keine Blöcke auf einer anderen Insel platzieren!
+player-break: {prefix} §cDu kannst keine Blöcke auf einer anderen Insel abbauen!
+player-place: {prefix} §cDu kannst keine Blöcke auf einer anderen Insel platzieren!
