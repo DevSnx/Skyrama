@@ -3,15 +3,13 @@
 ![screenshot](http://diecrewline.de/spigot/Skyrama/v1.0.0-ALPHA.png)
 
 ## Installation
-
 1. Compile the project or download [this JAR file](https://github.com/DevSnx/Skyrama/releases/download/v0.3-ALPHA/skyrama-0.3-ALPHA.jar).
-2. Place the plugin into your server plugin's directory.
-3. Restart your server or reload it with the command `/reload`.
-4. You can now configure the plugin in the `config.yml` file.
+2. Download latest Worldedit [this JAR file](https://dev.bukkit.org/projects/worldedit/files/latest).
+3. Place the plugins into your server plugin's directory.
+4. Restart your server or reload it with the command `/reload`.
+5. You can now configure the plugin in the `config.yml` file.
 
-
-##
-![screenshot](http://diecrewline.de/spigot/Skyrama/Commands.png)
+## Commands
 
 | Command       | Description  |
 | ------------- |-------------|
@@ -26,8 +24,7 @@
 | `/is info` | Show infos about you Island. |
 | `/is gui` | Open a Gui to manage you Island. |
 
-##
-![screenshot](http://diecrewline.de/spigot/Skyrama/Permissions.png)
+## Permissions
 
 | Permissions       | Description  |
 | ------------- |-------------|
@@ -42,6 +39,5 @@
 | `skyrama.break` | Break Blocks on a other Island without Trust |
 | `skyrama.place` | Place Blocks on a other Island without Trust |
 
-##
-![screenshot](http://diecrewline.de/spigot/Skyrama/Screenshots.png)
+## Screenshots
 ![screenshot](https://zupimages.net/up/21/27/c38w.png)
