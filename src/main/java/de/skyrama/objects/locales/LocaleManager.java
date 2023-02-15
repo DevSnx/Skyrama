@@ -25,7 +25,12 @@ public class LocaleManager {
 
     public String getString(String path) {
 
-        return this.file.getString(path);
+        String message = this.file.getString(path);
+        String prefix = String.valueOf(Skyrama.getPlugin(Skyrama.class).getConfig().getString("general.prefix"));
+        message = message.replace("{prefix}", prefix);
+        message = message.replace("&", "§");
+
+        return message;
 
     }
 }

@@ -14,15 +14,15 @@ mysql:
 # General plugin settings
 general:
 
-  #Prefix for all Messages
-  prefix: &8[&aSkyrama&8]
-
   # Language of the plugin (location: './locales/en_US.yml')
   # Avaible: en_US , de_DE
   locale: en_US
 
   # Name of the world where floating islands spawn
   world: skyrama
+
+  # PREFIX for all messages §f{PREFIX}
+  prefix: §7[§aSkyrama§7]
 
 # Island chat settings
 chat:
@@ -86,3 +86,6 @@ island:
 
   # Enable respawn on island when player die
   respawnIsland: true
+
+  # Enable Inventory save on die
+  respawnInventorySave: true

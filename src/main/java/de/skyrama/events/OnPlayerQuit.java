@@ -11,8 +11,7 @@ public class OnPlayerQuit implements Listener {
     public void onPlayerQuit(PlayerQuitEvent event){
         if(Skyrama.getPlugin(Skyrama.class).getConfig().getBoolean("chat.join-quit-messages") == true){
             event.setQuitMessage(Skyrama.getLocaleManager().getString("player-quit-message")
-                    .replace("{0}", event.getPlayer().getName())
-                    .replace("{prefix}", Skyrama.getInstance().getConfig().getString("global.prefix")));
+                    .replace("{0}", event.getPlayer().getName()));
         }
     }
 }

@@ -117,6 +117,7 @@ public final class Skyrama extends JavaPlugin {
         load.registerEvents(new OnPlayerRespawn(), this);
         load.registerEvents(new OnPlayerJoin(), this);
         load.registerEvents(new OnPlayerQuit(), this);
+        load.registerEvents(new OnPlayerDeath(), this);
 
     }
 

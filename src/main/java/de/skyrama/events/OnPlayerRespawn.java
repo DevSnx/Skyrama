@@ -11,7 +11,6 @@ public class OnPlayerRespawn implements Listener {
 
     @EventHandler
     public void onPlayerRespawn(PlayerRespawnEvent event) {
-
         if(Skyrama.getPlugin(Skyrama.class).getConfig().getBoolean("island.respawnIsland")) {
             if (Skyrama.getIslandManager().getPlayerIsland(event.getPlayer()) != null) {
                 new BukkitRunnable() {
