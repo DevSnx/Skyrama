@@ -21,8 +21,6 @@
 | `/is invite <Player Name>` | Invite the player to play on your island. |
 | `/is accept <Player Name>` | Accept the player invitation. |
 | `/is deny <Player Name>` | Decline the player invitation. |
-| `/is info` | Show infos about you Island. |
-| `/is gui` | Open a Gui to manage you Island. |
 
 ## Permissions
 
