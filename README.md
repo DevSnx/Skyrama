@@ -1,11 +1,11 @@
 ##
-![screenshot](http://diecrewline.de/spigot/Skyrama/Skyrama.png)
-![screenshot](http://diecrewline.de/spigot/Skyrama/v1.0.0-ALPHA.png)
+![screenshot](http://devsnx.de/spigot/Skyrama/Skyrama.png)
+![screenshot](http://devsnx.de/spigot/Skyrama/v1.0.0-ALPHA.png)
 
 ## Installation
 1. Compile the project or download [this JAR file](https://github.com/DevSnx/Skyrama/releases/download/v0.3-ALPHA/skyrama-0.3-ALPHA.jar).
 2. Download latest Worldedit [this JAR file](https://dev.bukkit.org/projects/worldedit/files/latest).
-3. Download Island Schematic [this .schem file](http://diecrewline.de/spigot/Skyrama/Schematic/island.schem).
+3. Download Island Schematic [this .schem file](http://devsnx.de/spigot/Skyrama/Schematic/island.schem).
 4. Place the plugins into your server plugin's directory.
 5. Restart your server or reload it with the command `/reload`.
 6. Place the `Island.schem` file into you server `/plugins/Skyrama/schematics` directory.
