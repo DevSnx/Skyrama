@@ -21,15 +21,21 @@ public class VaultManager {
 
     private boolean setupEconomy() {
         if (Bukkit.getServer().getPluginManager().getPlugin("Vault") == null) {
+            Bukkit.getServer().getConsoleSender().sendMessage("#     §cVault not Found!     #");
             return false;
         }
         if(Skyrama.getPlugin(Skyrama.class).getConfig().getBoolean("vault.enable") == false){
+            Bukkit.getServer().getConsoleSender().sendMessage("#       §aVault Found!       #");
+            Bukkit.getServer().getConsoleSender().sendMessage("#  §bVault Support disabled  #");
             return econ == null;
         }
         RegisteredServiceProvider<Economy> rsp = Bukkit.getServer().getServicesManager().getRegistration(Economy.class);
         if (rsp == null) {
             return false;
         }
+
+        Bukkit.getServer().getConsoleSender().sendMessage("#       §aVault Found!       #");
+        Bukkit.getServer().getConsoleSender().sendMessage("#  §bVault Support enabled   #");
         econ = rsp.getProvider();
         Skyrama.getVaultManager().isVault = true;
         return econ != null;

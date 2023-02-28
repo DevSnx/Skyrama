@@ -1,6 +1,7 @@
 ######################################
 #                                    #
 #   Configuration file for Skyrama   #
+#            v1.0.1-ALPHA            #
 #                                    #
 ######################################
 
@@ -45,7 +46,7 @@ chat:
   # message for Islandchat
   island-chat-message: §cIsland §f| §c{0} §7- §f{msg}
 
-# Island related settings
+# Vault related settings
 vault:
 
   # Enable or Disable the player need Money to create her Island

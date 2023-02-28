@@ -43,12 +43,10 @@ public final class Skyrama extends JavaPlugin {
         getServer().getConsoleSender().sendMessage("#   by §bDevSnx §f& §bkozennnn    §f#");
         getServer().getConsoleSender().sendMessage("#                           #");
         getServer().getConsoleSender().sendMessage("#         §cLoading...        §f#");
+        getServer().getConsoleSender().sendMessage("#                           #");
         this.initFiles();
-        getServer().getConsoleSender().sendMessage("#            1              #");
         this.initObjects();
-        getServer().getConsoleSender().sendMessage("#            2              #");
         this.initEvents();
-        getServer().getConsoleSender().sendMessage("#            3              #");
         this.initCommands();
         getServer().getConsoleSender().sendMessage("#                           #");
         getServer().getConsoleSender().sendMessage("#     §aSucsess Loading!      §f#");
