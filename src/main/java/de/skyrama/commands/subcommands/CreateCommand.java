@@ -23,10 +23,18 @@ public class CreateCommand implements ISubCommand {
 
     @Override
     public void perform(Player player, String[] args) {
-
         if(player.hasPermission("skyrama.*") || player.hasPermission("skyrama.create")){
             if(Skyrama.getIslandManager().getPlayerIsland(player) == null) {
-                Skyrama.getIslandManager().create(player);
+                if(Skyrama.getVaultManager().isVault()){
+                    if(Skyrama.getVaultManager().getMoney(player) >= Skyrama.getPlugin(Skyrama.class).getConfig().getDouble("vault.island-costs")){
+                        Skyrama.getVaultManager().removeMoney(player, Skyrama.getPlugin(Skyrama.class).getConfig().getDouble("vault.island-costs"));
+                        Skyrama.getIslandManager().create(player);
+                    }else{
+                        player.sendMessage(Skyrama.getLocaleManager().getString("player-create-island-no-money"));
+                    }
+                }else{
+                    Skyrama.getIslandManager().create(player);
+                }
             } else {
                 player.sendMessage(Skyrama.getLocaleManager().getString("player-already-have-island"));
             }

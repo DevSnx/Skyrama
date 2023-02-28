@@ -47,7 +47,7 @@ public class IslandManager {
         island.setSpawn(spawn);
         island.save();
 
-        Skyrama.getSchematicManager().load(Skyrama.getPlugin(Skyrama.class).getConfig().getString("island.schematic"), location.getX(), location.getY(), location.getZ());
+        Skyrama.getSchematicManager().load(Skyrama.getPlugin(Skyrama.class).getConfig().getString("general.schematic"), location.getX(), location.getY(), location.getZ());
         owner.getPlayer().teleport(spawn);
 
         owner.getPlayer().sendMessage(Skyrama.getLocaleManager().getString("player-create-island"));

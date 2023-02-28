@@ -41,7 +41,7 @@ public class SchematicManager {
     public void load(String name, double X, double Y, double Z) {
 
         try {
-            File file = new File(Skyrama.getPlugin(Skyrama.class).getDataFolder() + "/schematics/" + name + ".schem");
+            File file = new File(Skyrama.getPlugin(Skyrama.class).getDataFolder() + "/schematics/" + name);
             ClipboardFormat format = ClipboardFormats.findByFile(file);
             ClipboardReader reader = format.getReader(Files.newInputStream(file.toPath()));
             Clipboard clipboard = reader.read();

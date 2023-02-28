@@ -29,7 +29,18 @@ public class InviteAcceptCommand implements ISubCommand {
 
         if(player.hasPermission("skyrama.*") || player.hasPermission("skyrama.accept")){
             if(Bukkit.getPlayer(args[1]) != null) {
+
                 Player target = Bukkit.getPlayer(args[1]);
+
+                if(Skyrama.getVaultManager().isVault()){
+                    if(!(Skyrama.getVaultManager().getMoney(player) >= Skyrama.getPlugin(Skyrama.class).getConfig().getDouble("island-invite-price"))) {
+
+                        target.sendMessage(Skyrama.getLocaleManager().getString("player-invite-target-no-money"));
+                        player.sendMessage(Skyrama.getLocaleManager().getString("target-invite-island-no-money"));
+
+                        return;
+                    }
+                }
 
                 Island newIsland = Skyrama.getIslandManager().getPlayerIsland(target);
 

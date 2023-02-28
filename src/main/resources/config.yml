@@ -7,12 +7,15 @@
 mysql:
   host: localhost
   port: 3306
-  name: skyrama
-  user: skyrama
-  password: skyrama
+  name: Skyrama
+  user: Skyrama
+  password: Skyrama!!
 
 # General plugin settings
 general:
+
+  # the name of Island schematic
+  schematic: island.schematic
 
   # Language of the plugin (location: './locales/en_US.yml')
   # Avaible: en_US , de_DE
@@ -43,20 +46,21 @@ chat:
   island-chat-message: §cIsland §f| §c{0} §7- §f{msg}
 
 # Island related settings
-#vault: (In Progress)
-#
-#  # Enable or Disable the player need Money to create her Island
-#  enable: false
-#
-#  # Price to create Island
-#  island-costs: 500
-#
-#  # Enable or Disable the player need Money to Invite players to his Island
-#  island-invite-enable: false
-#
-#  # Price to Invite a Players
-#  island-invite-price: 100
-#
+vault:
+
+  # Enable or Disable the player need Money to create her Island
+  enable: false
+
+  # Price to create Island
+  island-costs: 500.00
+
+  # Enable or Disable the player need Money to Invite players to his Island
+  island-invite-enable: false
+
+
+  # Price to Invite a Players
+  island-invite-price: 100.00
+
 # Island related settings
 island:
 

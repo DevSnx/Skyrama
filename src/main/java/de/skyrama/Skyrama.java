@@ -8,6 +8,7 @@ import de.skyrama.objects.islands.IslandManager;
 import de.skyrama.objects.locales.LocaleManager;
 import de.skyrama.objects.schematics.SchematicManager;
 import de.skyrama.storage.SqlManager;
+import de.skyrama.utils.VaultManager;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
@@ -29,6 +30,8 @@ public final class Skyrama extends JavaPlugin {
     private static InventoryManager inventoryManager;
     public static String prefix;
 
+    public static VaultManager vaultManager;
+
     @Override
     public void onEnable() {
         // Plugin start logic
@@ -41,9 +44,13 @@ public final class Skyrama extends JavaPlugin {
         getServer().getConsoleSender().sendMessage("#                           #");
         getServer().getConsoleSender().sendMessage("#         §cLoading...        §f#");
         this.initFiles();
+        getServer().getConsoleSender().sendMessage("#            1              #");
         this.initObjects();
+        getServer().getConsoleSender().sendMessage("#            2              #");
         this.initEvents();
+        getServer().getConsoleSender().sendMessage("#            3              #");
         this.initCommands();
+        getServer().getConsoleSender().sendMessage("#                           #");
         getServer().getConsoleSender().sendMessage("#     §aSucsess Loading!      §f#");
         getServer().getConsoleSender().sendMessage("#                           #");
         getServer().getConsoleSender().sendMessage("#############################");
@@ -83,7 +90,6 @@ public final class Skyrama extends JavaPlugin {
 
         gridManager = new GridManager();
         sqlManager = new SqlManager();
-
         sqlManager.create();
 
         islandManager = new IslandManager();
@@ -92,6 +98,8 @@ public final class Skyrama extends JavaPlugin {
         inventoryManager = new InventoryManager();
 
         islandManager.loadIslands();
+
+        vaultManager = new VaultManager();
 
     }
 
@@ -159,6 +167,10 @@ public final class Skyrama extends JavaPlugin {
 
         return instance;
 
+    }
+
+    public static VaultManager getVaultManager() {
+        return vaultManager;
     }
 
     public static String getPrefix() {

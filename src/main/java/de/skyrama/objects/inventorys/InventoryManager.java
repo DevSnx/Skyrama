@@ -16,7 +16,7 @@ public class InventoryManager {
         getInv().setItem(10, new ItemCreator().material(Material.DARK_OAK_DOOR).displayName("§8» §cNach Hause").build());
         getInv().setItem(11, new ItemCreator().material(Material.PLAYER_HEAD).displayName("§8» §bMitglieder").build());
         getInv().setItem(15, new ItemCreator().material(Material.OAK_SAPLING).displayName("§8» §ANatur Einstellungen").build());
-        getInv().setItem(16, new ItemCreator().material(Material.LEGACY_REDSTONE_COMPARATOR).displayName("§8» §cInsel Einstellungen").build());
+        getInv().setItem(16, new ItemCreator().material(Material.REDSTONE).displayName("§8» §cInsel Einstellungen").build());
 
     }
 

@@ -17,6 +17,7 @@ player-already-on-island: §c{0} ist schon in deiner Insel.
 # ISLAND CREATE
 player-already-have-island: §cDu besitzt bereits eine Insel!
 player-create-island: §cInsel wurde erstellt!
+player-create-island-no-money: §f{prefix} §cDu hast nicht genügend Geld um eine Insel zu erstellen!
 
 # ISLAND HOME
 player-no-island: §cDu hast keine Insel!
@@ -24,7 +25,9 @@ player-teleport-island: §aTeleportation zur Insel...
 
 # ISLAND INVITE
 player-invite-island: §aInseleinladung an §b{0} §aversendet.
+player-invite-target-no-money: §f{prefix} §b{0} §chat nicht genügend Geld um der Insel beizutreten!
 target-invite-island: §c{1} hat dich zu seiner Insel eingeladen!
+target-invite-island-no-money: §f{prefix} §cDu hast nicht genügend Geld um der Insel beizutreten!
 
 # ISLAND INVITE ACCEPT
 player-join-island: §a{0} ist deiner Insel beigetreten!
