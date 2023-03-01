@@ -1,6 +1,5 @@
 ##
 ![screenshot](http://devsnx.de/spigot/Skyrama/Skyrama.png)
-![screenshot](http://devsnx.de/spigot/Skyrama/v1.0.0-ALPHA.png)
 
 ## Installation
 1. Compile the project or download [this JAR file](https://github.com/DevSnx/Skyrama/releases/download/v0.3-ALPHA/skyrama-0.3-ALPHA.jar).
